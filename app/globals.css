@@ -2,26 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer components {
+  .quizContainer {
+    @apply bg-slate-200 p-4 mt-8 rounded;
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  .li {
+    @apply list-none cursor-pointer my-4 px-4 py-2 rounded font-semibold text-slate-900 border-gray-600 border-2;
+  }
+
+  .liSelected {
+    @apply bg-slate-900 text-slate-300;
+  }
+
+  .li:hover {
+    @apply bg-slate-400;
+  }
+
+  .result {
+    @apply text-slate-900;
+  }
 }
